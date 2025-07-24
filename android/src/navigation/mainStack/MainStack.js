@@ -58,14 +58,7 @@ import {
 import { screenOptions, styles } from '../navigationStyles/navigationStyles';
 
 import { useNavigation, useTheme } from '@react-navigation/native';
-import CreateDeposit from '../../screens/Deposit/CreateDeposit/CreateDeposit';
-
-import AccountInformation from '../../screens/Deposit/ConfirmDeposit/Stripe/AccountInformation/AccountInformation';
-import DepositUsingStripe from '../../screens/Deposit/ConfirmDeposit/Stripe/DepositUsingStripe';
-import DepositUsingBank from '../../screens/Deposit/ConfirmDeposit/Bank/DepositUsingBank';
-import ConfirmDepositUsingBank from '../../screens/Deposit/ConfirmDeposit/Bank/ConfirmDepositUsingBank/ConfirmDepositUsingBank';
-import DepositSuccess from '../../screens/Deposit/DepositSuccess/DepositSuccess';
-import TransactionFailed from '../../screens/Deposit/TransactionFailed/TransactionFailed';
+// Deposit screens removed
 import CreateMoneyRequest from '../../screens/RequestMoney/Create/CreateRequest/CreateMoneyRequest';
 import ConfirmMoneyRequest from '../../screens/RequestMoney/Create/ConfirmRequst/ConfirmMoneyRequest';
 import MoneyRequestTransactionDetails from '../../screens/RequestMoney/Create/MoneyRequestTransactionDetails/MoneyRequestTransactionDetails';
@@ -73,28 +66,19 @@ import SuccessMoneyRequest from '../../screens/RequestMoney/Create/SucessRequest
 import CreateSendMoney from '../../screens/SendMoney/CreateSendMoney/CreateSendMoney';
 import ConfirmSendMoney from '../../screens/SendMoney/ConfirmSendMoney/ConfirmSendMoney';
 import SucessSendMoney from '../../screens/SendMoney/SucessSendMoney/SucessSendMoney';
-import CreateWithdraw from '../../screens/Withdraw/CreateWithdraw/CreateWithdraw';
-import ConfirmWithdraw from '../../screens/Withdraw/ConfirmWithdraw/ConfirmWithdraw';
-import SuccessWithdraw from '../../screens/Withdraw/SuccessWithdraw/SuccessWithdraw';
-import WithdrawSettings from '../../screens/Withdraw/WithdrawSettings/WithdrawSettings';
-import AddWithdrawSettings from '../../screens/Withdraw/WithdrawSettings/AddWithdrawSettings';
-import EditWithdrawSettings from '../../screens/Withdraw/WithdrawSettings/EditWithdrawSettings';
+// Withdrawal screens removed
 import Transactions from '../../screens/Transactions/Transactions';
 import RequestReview from '../../screens/RequestMoney/Accept/ReviewRequest/RequestReview';
 import SendRequestedMoney from '../../screens/RequestMoney/Accept/SendRequestedMoney/SendRequestedMoney';
 import SuccessSendRequestedMoney from '../../screens/RequestMoney/Accept/SuccessSendRequestedMoney/SuccessSendRequestedMoney';
-import CreateExchangeCurrency from '../../screens/ExchangeCurrency/CreateExchangeCurrency/CreateExchangeCurrency';
-import ConfirmExchangeCurrency from '../../screens/ExchangeCurrency/ConfirmExchangeCurrency/ConfirmExchangeCurrency';
-import SuccessExchangeCurrency from '../../screens/ExchangeCurrency/SuccessExchangeCurrency/SuccessExchangeCurrency';
+// Exchange currency screens removed
 import EditProfile from '../../screens/Profile/EditProfile/EditProfile';
 import Settings from '../../screens/Settings/Settings';
 import ChangePassword from '../../screens/Settings/ChangePassword/ChangePassword';
 import { useTranslation } from 'react-i18next';
 import MyWallet from '../../screens/MyWallet/MyWallet';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import ConfirmPaypal from '../../screens/Deposit/ConfirmDeposit/Paypal/ConfirmPaypal';
-import ConfirmDeposit from '../../screens/Deposit/CreateDeposit/ConfirmDeposit';
-import PaymentView from '../../screens/Deposit/CreateDeposit/PaymentView';
+// Deposit confirmation screens removed
 import BackBtn from '../utils/BackBtn';
 import QRPay from '../../screens/QrPay/QRPay';
 import ScanQRCode from '../../screens/QrPay/ScanQRCode/ScanQRCode';
@@ -133,95 +117,6 @@ const MainStack = () => {
         component={DrawerNavigation}
         options={{ headerShown: false }}
       />
-      <Stack.Group>
-        <Stack.Screen name={CREATE_DEPOSIT} options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <CreateDeposit {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={CONFIRM_DEPOSIT}
-          options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <ConfirmDeposit {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={PAYMENT_VIEW}
-          options={{
-            title: trans('Deposit'),
-            headerLeft: (props) => (
-              <BackBtn props={props} screen={CREATE_DEPOSIT} />
-            ),
-          }}>
-          {props => (
-            <PrivateRoute>
-              <PaymentView {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={DEPOSIT_USING_STRIPE}
-          options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <DepositUsingStripe {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={ACCOUNT_INFORMATION}
-          options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <AccountInformation {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen name={DEPOSIT_USING_BANK} options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <DepositUsingBank {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={CONFIRM_DEPOSIT_BANK}
-          options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <ConfirmDepositUsingBank {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen name={DEPOSIT_SUCCESS} options={{ headerShown: false }}>
-          {props => (
-            <PrivateRoute>
-              <DepositSuccess {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen name={TRANSACTION_FAILED} options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <TransactionFailed {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={DEPOSIT_USING_PAYPAL}
-          options={{ title: trans('Deposit') }}>
-          {props => (
-            <PrivateRoute>
-              <ConfirmPaypal {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-      </Stack.Group>
       <Stack.Group>
         <Stack.Screen
           name={CREATE_MONEY_REQUEST}
@@ -306,58 +201,6 @@ const MainStack = () => {
         </Stack.Screen>
       </Stack.Group>
       <Stack.Group>
-        <Stack.Screen name={CREATE_WITHDRAW} options={{ title: trans('Withdrawal') }}>
-          {props => (
-            <PrivateRoute>
-              <CreateWithdraw {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={CONFIRM_WITHDRAW}
-          options={{ title: trans('Withdrawal') }}>
-          {props => (
-            <PrivateRoute>
-              <ConfirmWithdraw {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen name={SUCCESS_WITHDRAW} options={{ headerShown: false }}>
-          {props => (
-            <PrivateRoute>
-              <SuccessWithdraw {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={WITHDRAW_SETTINGS}
-          options={{ title: trans('Withdrawal Settings') }}>
-          {props => (
-            <PrivateRoute>
-              <WithdrawSettings {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={ADD_WITHDRAW_SETTINGS}
-          options={{ title: trans('Add Withdrawal Option') }}>
-          {props => (
-            <PrivateRoute>
-              <AddWithdrawSettings {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={EDIT_WITHDRAW_SETTINGS}
-          options={{ title: trans('Manage Withdrawal Option') }}>
-          {props => (
-            <PrivateRoute>
-              <EditWithdrawSettings {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-      </Stack.Group>
-      <Stack.Group>
         <Stack.Screen
           name={REVIEW_REQUEST}
           options={{ title: trans('Accept Request') }}>
@@ -382,35 +225,6 @@ const MainStack = () => {
           {props => (
             <PrivateRoute>
               <SuccessSendRequestedMoney {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-      </Stack.Group>
-      <Stack.Group>
-        <Stack.Screen
-          name={CREATE_EXCHANGE_CURRENCY}
-          options={{ title: trans('Exchange Currency') }}>
-          {props => (
-            <PrivateRoute>
-              <CreateExchangeCurrency {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={CONFIRM_EXCHANGE_CURRENCY}
-          options={{ title: trans('Exchange Currency') }}>
-          {props => (
-            <PrivateRoute>
-              <ConfirmExchangeCurrency {...props} />
-            </PrivateRoute>
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name={SUCCESS_EXCHANGE_CURRENCY}
-          options={{ headerShown: false }}>
-          {props => (
-            <PrivateRoute>
-              <SuccessExchangeCurrency {...props} />
             </PrivateRoute>
           )}
         </Stack.Screen>

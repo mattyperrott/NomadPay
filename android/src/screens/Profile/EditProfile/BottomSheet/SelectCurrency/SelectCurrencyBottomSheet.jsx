@@ -5,7 +5,7 @@ import {useTheme} from '@react-navigation/native';
 import {selectCurrencyBottomSheetStyle} from './selectCurrencyBottomSheet.style';
 import {useTranslation} from 'react-i18next';
 import {memo} from 'react';
-import { bottomSheetStyle } from '../../../../Deposit/CreateDeposit/DepositBottomSheet/bottomSheet.style';
+import { bottomSheetStyles as bottomSheetStyle } from '../../../../components/CustomBottomSheet/bottomSheet.style';
 
 const SelectCurrencyBottomSheet = ({
   bottomSheetRef,

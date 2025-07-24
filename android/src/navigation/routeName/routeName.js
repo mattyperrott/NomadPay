@@ -19,16 +19,6 @@ export const DASHBOARD = 'Dashboard';
 
 export const MY_WALLET = 'My Wallet';
 
-export const CREATE_DEPOSIT = 'Create Deposit';
-export const CONFIRM_DEPOSIT = 'ConfirmDeposit';
-export const PAYMENT_VIEW = 'Payment View';
-export const DEPOSIT_USING_STRIPE = 'Deposit Using Stripe';
-export const ACCOUNT_INFORMATION = 'Account Information';
-export const DEPOSIT_USING_BANK = 'Deposit Using Bank';
-export const CONFIRM_DEPOSIT_BANK = 'Confirm Deposit';
-export const DEPOSIT_SUCCESS = 'Deposit Success';
-export const TRANSACTION_FAILED = 'Transaction Failed';
-export const DEPOSIT_USING_PAYPAL = 'Deposit Using Paypal';
 
 export const NOTIFICATION = 'Notifications';
 
@@ -54,20 +44,10 @@ export const SUCCESS_SEND_REQUESTED_MONEY = 'Success Send Requested Money';
 export const SETTINGS = 'Settings';
 export const CHANGE_PASSWORD = 'Change Password';
 
-export const CREATE_EXCHANGE_CURRENCY = 'Exchange Currency';
-export const CONFIRM_EXCHANGE_CURRENCY = 'Confirm Exchange Currency';
-export const SUCCESS_EXCHANGE_CURRENCY = 'Success Exchange Currency';
 
 export const TRANSACTIONS = 'Transactions';
 export const CARD_INFO = 'Card Info';
 
-export const CREATE_WITHDRAW = 'Create Withdraw';
-export const CONFIRM_WITHDRAW = 'Confirm Withdraw';
-export const SUCCESS_WITHDRAW = 'Success Withdraw';
-
-export const WITHDRAW_SETTINGS = 'Withdraw Settings';
-export const ADD_WITHDRAW_SETTINGS = 'Add Withdraw Option';
-export const EDIT_WITHDRAW_SETTINGS = 'Manage Withdraw Option';
 
 export const OFFLINE_SCREEN = 'OfflINE';
 

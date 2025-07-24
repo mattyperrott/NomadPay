@@ -10,7 +10,7 @@ import Cancel from '../../../../../assets/svg/cross-icon.svg';
 import SearchFile from '../../../../../assets/svg/searchFile.svg';
 import {useTranslation} from 'react-i18next';
 import {memo} from 'react';
-import { bottomSheetStyle } from '../../../../Deposit/CreateDeposit/DepositBottomSheet/bottomSheet.style';
+import { bottomSheetStyles as bottomSheetStyle } from '../../../../components/CustomBottomSheet/bottomSheet.style';
 const SelectTimeZoneBottomSheet = ({
   bottomSheetRef,
   setSelectedItem,

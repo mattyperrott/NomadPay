@@ -4,7 +4,7 @@ import {useTheme} from '@react-navigation/native';
 import {Fragment} from 'react';
 import {selectCurrencyBottomSheetStyle} from './selectCurrencyBottomSheet.style';
 import CustomBottomSheet from '../../../../components/CustomBottomSheet/CustomBottomSheet';
-import { bottomSheetStyle } from '../../../../Deposit/CreateDeposit/DepositBottomSheet/bottomSheet.style';
+import { bottomSheetStyles as bottomSheetStyle } from '../../../../components/CustomBottomSheet/bottomSheet.style';
 
 const SelectCurrencyBottomSheet = ({bottomSheetRef, data, handleSetInfo, selectedItem}) => {
   const {colors} = useTheme();

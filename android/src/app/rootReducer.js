@@ -15,10 +15,8 @@ import exchangeCurrencies from '../features/slices/exchangeCurrencySlice/exchang
 import getProfile from '../features/slices/user/getProfile/getProfile';
 import themeReducer from '../features/slices/themeReducer/themeReducer';
 import myCards from '../features/slices/myWallets/myWallets';
-import getDepositMoneyCurrencies from '../features/slices/getCurrencies/getDepositMoneyCurrencies';
 import transactions from '../features/slices/transactions/transactions';
 import languageReducer from '../features/slices/languageReducer/languageReducer';
-import depositConfirm from '../features/slices/depositMoneySlice/paymentConfirm';
 import providerStatusReducer from '../features/slices/myWallets/providerStatus';
 import systemPreference from '../features/slices/preference/systemPreference';
 import cryptoSendCurrency from '../features/slices/cryptoSendCurrency/cryptoSendCurrency';
@@ -27,11 +25,9 @@ const rootReducer = {
   themeReducer,
   languageReducer,
   myCards,
-  depositConfirm,
   providerStatusReducer,
   systemPreference,
   getProfile,
-  getDepositMoneyCurrencies,
   transactions,
   cryptoSendCurrency,
 };

@@ -33,3 +33,9 @@ Icon
 *.quarantine
 
 __MACOSX/
+# Project ignores
+.env
+node_modules/
+vendor/
+android/android/*.log
+.idea/

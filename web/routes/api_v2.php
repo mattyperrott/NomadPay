@@ -78,30 +78,11 @@ Route::group(['middleware' => ['auth:api-v2', 'check-user-inactive']], function 
     /**
      * Exchange money routes
      */
-    Route::group(['prefix' => 'exchange-money', 'middleware' => ['permission:manage_exchange', 'check-user-suspended']], function () {
-        Route::get('get-currencies', 'ExchangeMoneyController@getCurrencies');
-        Route::post('amount-limit-check', 'ExchangeMoneyController@exchangeLimitCheck');
-        Route::post('get-wallets-balance', 'ExchangeMoneyController@getExchangeWalletsBalance');
-        Route::post('get-destination-wallets', 'ExchangeMoneyController@getExchangableDestinations');
-        Route::post('get-exchange-rate', 'ExchangeMoneyController@getCurrenciesExchangeRate');
-        Route::post('confirm-details', 'ExchangeMoneyController@reviewExchangeDetails');
-        Route::post('complete', 'ExchangeMoneyController@exchangeMoneyComplete');
-    });
 
 
     /**
      * Deposit money rotue
      */
-    Route::group(['prefix' => 'deposit-money', 'middleware' => ['permission:manage_deposit', 'check-user-suspended']], function () {
-        Route::get('get-currencies', 'DepositMoneyController@getCurrencies');
-        Route::post('amount-limit-check', 'DepositMoneyController@validateDepositData');
-        Route::post('payment-methods', 'DepositMoneyController@getPaymentMethod');
-        Route::post('get-bank-list', 'DepositMoneyController@getBankList');
-        Route::post('get-bank-detail', 'DepositMoneyController@getBankDetails');
-        Route::post('stripe-make-payment', 'DepositMoneyController@stripePaymentInitiate');
-        Route::post('payment-confirm', 'DepositMoneyController@paymentConfirm');
-        Route::post('get-paypal-info', 'DepositMoneyController@getPaypalInfo');
-    });
 
 
     // Request Money routes
@@ -119,20 +100,6 @@ Route::group(['middleware' => ['auth:api-v2', 'check-user-inactive']], function 
     /**
      * Withdrawal setting routes
      */
-    Route::group(['prefix' => 'withdrawal-setting', 'middleware' => ['permission:manage_withdrawal', 'check-user-suspended']], function () {
-        Route::get('/payment-methods', 'WithdrawalSettingController@paymentMethods');
-        Route::get('/crypto-currencies', 'WithdrawalSettingController@cryptoCurrencies');
-    });
-    Route::resource('/withdrawal-settings', WithdrawalSettingController::class)->middleware('permission:manage_withdrawal', 'check-user-suspended');
-
-    /**
-     * Withdrawal routes
-     */
-    Route::group(['prefix' => 'withdrawal', 'middleware' => ['permission:manage_withdrawal', 'check-user-suspended']], function () {
-        Route::post('get-currencies', 'WithdrawalController@getCurrencies');
-        Route::post('amount-limit-check', 'WithdrawalController@amountLimitCheck');
-        Route::post('confirm', 'WithdrawalController@Confirm');
-    });
 
     /**
      * QrCode
